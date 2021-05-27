@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cusModal" id="loginModal">
+        <div class="modalContent">
+            <div class="modalHead">
+                <span class="closeBtn" onclick="this.parentElement.parentElement.parentElement.classList.remove('cusShow')">
+                    <svg viewBox="0 0 1000 1000" id="icon-x"><path fill="currentColor" d="M588.333 500l393.334-393.333C993.333 95 1000 80 1000 62.5 1000 28.333 971.667 0 937.5 0c-16.667 0-32.5 7.5-44.167 18.333L500 411.667 106.667 18.333C95 7.5 80 0 62.5 0 28.333 0 0 28.333 0 62.5 0 80 7.5 95 18.333 106.667L411.667 500 18.333 893.333C7.5 905 0 920.833 0 937.5c0 34.167 28.333 62.5 62.5 62.5 17.5 0 32.5-6.667 44.167-18.333L500 588.333l393.333 393.334C905 993.333 920.833 1000 937.5 1000c34.167 0 62.5-28.333 62.5-62.5 0-16.667-6.667-32.5-18.333-44.167z"></path></svg>
+                </span>
+                <b>Login</b>
+            </div>
+            <div class="modalBody">
+                <form action="">
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Password">
+                        <span onclick="togglePass(this)">Show</span>
+                    </div>
+                    <button class="btn" type="submit">
+                        <span>Login</span>
+                    </button>
+                    <p>Don't have an account? <a href="javascript:void(0)" onclick="openModal('signupModal')">Signup</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="cusModal signup" id="signupModal">
+        <div class="modalContent">
+            <div class="modalHead">
+                <span class="closeBtn" onclick="this.parentElement.parentElement.parentElement.classList.remove('cusShow')">
+                    <svg viewBox="0 0 1000 1000" id="icon-x"><path fill="currentColor" d="M588.333 500l393.334-393.333C993.333 95 1000 80 1000 62.5 1000 28.333 971.667 0 937.5 0c-16.667 0-32.5 7.5-44.167 18.333L500 411.667 106.667 18.333C95 7.5 80 0 62.5 0 28.333 0 0 28.333 0 62.5 0 80 7.5 95 18.333 106.667L411.667 500 18.333 893.333C7.5 905 0 920.833 0 937.5c0 34.167 28.333 62.5 62.5 62.5 17.5 0 32.5-6.667 44.167-18.333L500 588.333l393.333 393.334C905 993.333 920.833 1000 937.5 1000c34.167 0 62.5-28.333 62.5-62.5 0-16.667-6.667-32.5-18.333-44.167z"></path></svg>
+                </span>
+                <b>Signup</b>
+            </div>
+            <div class="modalBody">
+                <form action="">
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <input type="text" placeholder="Phone">
+                    </div>
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="formGroup">
+                        <div class="iconCont">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Password">
+                        <span onclick="togglePass(this)">Show</span>
+                    </div>
+                    <button class="btn" type="submit">
+                        <span>Signup</span>
+                    </button>
+                    <p>Already have an account? <a href="javascript:void(0)" onclick="openModal('loginModal')">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="d-flex align-items-center position-relative justify-content-between">
+
+            <a href="#" class="logoCont"><img src="images/wallet.png" alt=""></a>
+            <div class="mobile toggleMenu">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="centerMenu">
+                <ul class="d-flex list-unstyled">
+                    <li><a href="#">We're Hiring!</a></li>
+                    <li><a href="#">For Freelancer</a></li>
+                    <li><a href="#">Payment</a></li>
+                    <li><a href="#" class="btn btnLogin mobile" onclick="openModal('loginModal')">Login</a></li>
+                    <li><a href="#" class="btn btnSignup mobile" onclick="openModal('signupModal')">Sign Up</a></li>
+                </ul>
+            </div>
+
+
+            <ul class="desktop d-flex list-unstyled">
+                <li><a href="javascript:void(0)" class="btn btnLogin " onclick="openModal('loginModal')">Login</a></li>
+                <li><a href="#" class="btn btnSignup" onclick="openModal('signupModal')">Sign Up</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <div class="bodySection">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="textContainer">
+                        <div class="fortext">For Freelances</div>
+                        <h1>Wallet Use Made Easy.</h2>
+                            <p>
+                                Free Payment Gateway. Supports Netbanking, Credit, Debit Cards, UPI etc.
+                            </p>
+
+                            <div><a href="#">Learn More</a></div>
+                    </div>
+                </div>
+                <!-- second column -->
+                <div class="col-lg-7">
+                    <div class="infoPar w-100">
+
+
+                        <div class="infoContainer">
+                            <div class="smallDiv ">
+                                <div class="smallCard cusradius">
+                                    <div class="iconDiv">
+                                        <img src="images/kelly.png" alt="">
+                                    </div>
+                                    <h6>Kelly Jenifer</h6>
+                                    <span class="d-block">Tester</span>
+                                    <a href="#" class="btn">Pay Now</a>
+                                </div>
+                            </div>
+                            <div class="bigDiv">
+                                <div class="d-flex cusradius bigDivtop align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="iconDiv">
+                                            <img src="images/sean.png" alt="">
+                                            <span>GOLD</span>
+                                        </div>
+                                        <div class="ml-2 text">
+                                            <h6>Sean Marshal</h6>
+                                            <span class="d-block">Validity</span>
+                                            <span class="d-block datespan">20 sep 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6>$89.5K</h6>
+                                    </div>
+                                    <div class="linewave">
+                                        <img src="images/linewave.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="cusradius statPar">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <div class="linewave">
+                                                <img src="images/linewave.svg" alt="">
+                                            </div>
+
+                                            <div class="textCont">
+                                                <h6>Account Activity</h6>
+                                                <span>Last 7 days</span>
+                                            </div>
+                                        </div>
+                                        <div class="svgCont"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><rect fill="none" height="24" width="24"/><path d="M9,5v2h6.59L4,18.59L5.41,20L17,8.41V15h2V5H9z"/></svg></div>
+                                    </div>
+
+                                    <div class="chartParent">
+                                        <div class="horLines">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="barsCont">
+                                            <div class="barsTextCont black">
+                                                <div class="bar" style="height: 25%"></div>
+                                                <span>Mon</span>
+                                            </div>
+                                            <div class="barsTextCont black inverted">
+                                                <div class="bar" style="height: 15%"></div>
+                                                <span>Tue</span>
+                                            </div>
+                                            <div class="barsTextCont cyan">
+                                                <div class="bar" style="height: 25%"></div>
+                                                <span>Wed</span>
+                                            </div>
+                                            <div class="barsTextCont purple boldTxt">
+                                                <div class="bar" style="height: 50%"></div>
+                                                <span class="font-weight-bold text-dark">Thu</span>
+                                            </div>
+                                            <div class="barsTextCont black inverted">
+                                                <div class="bar" style="height: 5%"></div>
+                                                <span>Fri</span>
+                                            </div>
+                                            <div class="barsTextCont violet">
+                                                <div class="bar" style="height: 45%"></div>
+                                                <span>Sat</span>
+                                            </div>
+                                            <div class="barsTextCont black">
+                                                <div class="bar" style="height: 40%"></div>
+                                                <span>Sun</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bottomDiv d-flex justify-content-between align-items-center cusradius">
+                                    <div class="leftSide d-flex align-items-center">
+                                        <div class="iconDiv"><img src="images/anita.png" alt=""></div>
+                                        <h6>Missed call from <b>jenifer Anitson</b></h6>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="smallDiv">
+                                <div class="smallCard cusradius">
+                                    <div class="iconDiv">
+                                        <img src="images/thomas.png" alt="">
+                                    </div>
+                                    <h6>Thomas Josef</h6>
+                                    <span class="d-block">Designer</span>
+                                    <a href="#" class="btn">Pay Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- second-row -->
+            <div class="py-5">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-3 mb-md-0">
+                            <a href="#" class="paymentWarpper">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="24px" height="24px" viewBox="0 0 490.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                                    <path d="M3110 5106 c-19 -7 -646 -385 -1394 -840 l-1359 -826 -70 0 c-92 0 -139 -15 -194 -64 -91 -80 -83 81 -83 -1654 0 -1278 2 -1538 14 -1566 19 -46 72 -104 120 -129 l41 -22 2265 0 2265 0 41 22 c48 25 101 83 120 129 12 28 14 288 14 1566 0 1735 8 1574 -83 1654 -65 57 -98 64 -301 64 l-177 0 -32 52 c-18 28 -140 229 -273 447 -132 218 -243 395 -248 394 -4 -1 -337 -202 -741 -447 l-733 -446 -244 0 c-211 1 -241 2 -224 15 10 7 420 258 912 557 492 299 894 547 894 552 0 10 -254 430 -287 475 -50 66 -163 97 -243 67z m1558 -2088 l2 -198 -2220 0 -2220 0 0 188 c0 133 4 192 12 200 9 9 510 11 2218 10 l2205 -3 3 -197z m0 -1910 l-3 -883 -2215 0 -2215 0 -3 883 -2 882 2220 0 2220 0 -2 -882z"/><path d="M670 1440 l0 -150 395 0 395 0 0 150 0 150 -395 0 -395 0 0 -150z"/><path d="M1650 1440 l0 -150 395 0 395 0 0 150 0 150 -395 0 -395 0 0 -150z"/><path d="M2622 1443 l3 -148 395 0 395 0 3 148 3 147 -401 0 -401 0 3 -147z"/><path d="M3600 1440 l0 -150 395 0 395 0 0 150 0 150 -395 0 -395 0 0 -150z"/><path d="M670 755 l0 -135 1110 0 1110 0 0 135 0 135 -1110 0 -1110 0 0 -135z"/></g>
+                                </svg>
+                            </a>
+                            <div class="ml-2 parawrapper">
+                                <p class="m-0">Best Payment Gateway for Global <br> Go Live Instantly.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-end justify-content-md-end justify-content-start">
+                        <div class="linkCont">
+                            <a href="#">Linkedin</a>
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- js file link -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
